@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>klieaExpensiveCloths</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&family=Train+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="content-wrap">
+        <template id="result-template">
+          <div class="result-div">
+            <div class="result-id"></div>
+            <a class="toItemPage result-link" href="./item.html">
+              <img class="result-image" src="" class="card-img-top" alt="..." />
+              <div class="result-title"></div>
+            </a>
+            <div class="result-price"></div>
+            <button class="btn btn-dark btn-sm result-add-btn">Add Cart</button>
+          </div>
+        </template>
+
+        <!-- nav bar -->
+        <nav class="navbar bg-body-tertiary fixed-top nav-class">
+          <div class="container-fluid nav-container">
+            <a class="navbar-brand shop-logo" href="/"
+              >klieaExpensiveCloths</a
+            >
+
+            <div class="shopping-bag-div">
+              <a href="./cart.html"
+                ><iconify-icon
+                  icon="solar:bag-4-outline"
+                  width="30"
+                  class="shopping-bag-icon"
+                >
+                </iconify-icon>
+                <span class="badge text-bg-secondary itemCount"></span>
+              </a>
+            </div>
+
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="offcanvas offcanvas-end"
+              tabindex="-1"
+              id="offcanvasNavbar"
+              aria-labelledby="offcanvasNavbarLabel"
+            >
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title shop-logo" id="offcanvasNavbarLabel">
+                  klieaExpensiveCloths
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="./index.html"
+                      >Home</a
+                    >
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href=""
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Categories
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          class="dropdown-item women"
+                          data-bs-dismiss="offcanvas"
+                          href=""
+                          >Women</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item men"
+                          data-bs-dismiss="offcanvas"
+                          href=""
+                          >Men</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item jewelery"
+                          data-bs-dismiss="offcanvas"
+                          href=""
+                          >Jewellery</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item electronics"
+                          data-bs-dismiss="offcanvas"
+                          href=""
+                          >Electronics</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <form class="d-flex mt-3" role="search">
+                  <input
+                    class="form-control me-2 search-input"
+                    type="search"
+                    aria-label="Search"
+                    name="search"
+                  />
+
+                  <button
+                    class="btn btn-outline-dark search-submit"
+                    type="submit"
+                  >
+                    Search
+                  </button>
+                </form>
+
+                <div id="search-results"></div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <template id="homeImages-template">
+          <div class="home-div">
+            <a class="home-img-link">
+              <img
+                src="./public/images/home-woman.jpg"
+                class="img-fluid homeImage"
+                alt="home-woman-photo"
+            /></a>
+          </div>
+        </template>
+
+        <template id="card-template">
+          <div
+            class="card col-lg-3 col-md-6 col-sm-1 m-3 individual-card"
+            style="width: 18rem"
+          >
+            <div class="card-id"></div>
+            <a class="card-link">
+              <img
+                class="card-image"
+                src="../public/images/home-woman.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-title"></div>
+            </a>
+            <div class="card-price"></div>
+            <button class="btn btn-dark card-btn">Add</button>
+
+          </div>
+        </template>
+
+        <div id="homeImages-show"></div>
+
+        <div class="home-text">
+          <h1>PLACEHOLDER</h1>
+          <h2>COLLECTION</h2>
+        </div>
+
+        <div class="container text-center card-div">
+          <div id="card-list" class="row justify-content-center"></div>
+        </div>
+      </div>
+
+      <footer>
+        <iconify-icon icon="uiw:copyright" width="10"></iconify-icon>
+        klieaExpensiveCloths
+        <span class="year"></span>
+      </footer>
+    </div>
+
+    <!-- axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <!-- CDN example (jsDelivr) -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <!-- External JavaScript -->
+    <script src="./js/home.js"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/year.js"></script>
+  </body>
+</html>

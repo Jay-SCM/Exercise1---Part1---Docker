@@ -1,0 +1,131 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "ECommerce Project with NodeJS",
+    "description": "My User Project Application API",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "127.0.0.1:4000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "ECommerce",
+      "description": "API for ECommerce in the system"
+    }
+  ],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+
+  "paths": {
+    "/shop": {
+      "get": {
+        "tags": ["All Product Fetching Service"],
+        "summary": "Fetch all products from Fake Store API",
+
+        "responses": {
+          "200": {
+            "description": "This service allows you to fetch all products from Fake Store API"
+          }
+        }
+      }
+    },
+
+    "/shop/cart": {
+      "get": {
+        "tags": ["Current Cart Items Fetching Service"],
+        "summary": "Fetch all items in the current cart",
+
+        "responses": {
+          "200": {
+            "description": "This service allows you to fetch all items in the current cart"
+          }
+        }
+      }
+    },
+
+    "/shop/{type}": {
+      "get": {
+        "tags": ["Per-Category Products Fetching Service. 4 Categories."],
+        "summary": "Fetch per-category products from Fake Store API. 4 Categories: [women's clothing, men's clothing, jewelery, electronics]",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "description": "Category name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "This service allows you to fetch per-category products from Fake Store API. 4 Categories: [women's clothing, men's clothing, jewelery, electronics]"
+          }
+        }
+      }
+    },
+
+    "/shop/item/{id}": {
+      "get": {
+        "tags": ["Per-Item Fetching Service"],
+        "summary": "Fetch specific product from Fake Store API. [Item ID from 1 to 20]",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Item ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "This service allows you to fetch specific product[Item ID from 1 to 20] from Fake Store API"
+          }
+        }
+      }
+    },
+
+    "/shop/add/{id}": {
+      "post": {
+        "tags": ["Item Posting(Adding) To Cart Service"],
+        "summary": "Post(Add) An Item To Cart. [Item ID from 1 to 20] ",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Item ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "This service allows you to post(add) an item[Item ID from 1 to 20] to the cart"
+          }
+        }
+      }
+    },
+
+    "/shop/delete/{id}": {
+      "post": {
+        "tags": ["Posting(Deleting) Item(s) From Current Cart Service"],
+        "summary": "Post(Delete) Item(s) From Current Cart. *If there are multiple items with the same ID, they are removed together.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Item ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "This service allows you to delete item(s) per Item ID[Item ID from 1 to 20 that are in the cart] from the cart."
+          }
+        }
+      }
+    }
+  }
+}

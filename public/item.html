@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Item</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&family=Train+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="content-wrap">
+        <nav class="navbar bg-body-tertiary fixed-top">
+          <div class="container-fluid">
+            <a class="navbar-brand shop-logo" href="/"
+              >klieaExpensiveCloths</a
+            >
+            <button
+              type="button"
+              class="btn btn-outline-dark back-btn-item"
+              onclick="history.back()"
+            >
+              <iconify-icon icon="clarity:home-solid" width="20"></iconify-icon>
+            </button>
+          </div>
+        </nav>
+
+        <div class="container text-center item-div">
+          <div class="item-img-div">
+            <img class="item-image" src="" alt="" />
+          </div>
+          <div class="item-description-div">
+            <p class="item-title">Hoodie</p>
+            <p class="item-price">120 CC</p>
+            <button class="btn btn-dark add-btn">Add</button>
+            <p class="product-info">Product Information:</p>
+            <p class="item-description">
+              Suspendisse pharetra lectus non placerat porttitor. Sed euismod
+              vehicula nibh,
+            </p>
+            <p class="rating">
+              <iconify-icon icon="uiw:like-o"></iconify-icon> Rating:
+              <span class="item-rating"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <iconify-icon icon="uiw:copyright" width="10"></iconify-icon>
+        klieaExpensiveCloths
+        <span class="year"></span>
+      </footer>
+    </div>
+    <!-- axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <!-- CDN example (jsDelivr) -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <!-- External JavaScript -->
+    <script src="../js/item.js"></script>
+    <script src="../js/year.js"></script>
+  </body>
+</html>
